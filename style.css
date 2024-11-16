@@ -1,0 +1,368 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.main {
+  display: grid;
+  grid-template: 1fr 1fr/1fr 1fr;
+  height: 85vh;
+  width: 85vh;
+  border-radius: 40px;
+  border: 10px solid black;
+  overflow: hidden;
+  margin: 10px;
+}
+
+.container {
+  display: grid;
+  gap: 30px;
+  align-items: center;
+  justify-items: center;
+}
+
+.container h1 {
+  margin: 10px 0;
+}
+
+.counter {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.counter .counter-value {
+  margin-left: 100px;
+}
+
+.btn-increment,
+.btn-decrement {
+  margin: 0 5px;
+  width: 50px;
+}
+
+.counter h1 {
+  margin: 10px 0;
+  flex: 1;
+}
+
+.btn-increment,
+.btn-decrement {
+  height: 70px;
+  width: 70px;
+  border-radius: 10px;
+  font-size: 35px;
+  background-color: #000000;
+  border: 2px solid #000000;
+  color: white;
+  cursor: pointer;
+}
+
+.btn-reset {
+  height: 70px;
+  width: 100%;
+  border-radius: 10px;
+  font-size: 25px;
+  background-color: #000000;
+  border: 2px solid #000000;
+  color: white;
+  cursor: pointer;
+}
+
+.btn-increment:active,
+.btn-decrement:active,
+.btn-reset:active {
+  opacity: 0.8;
+  transform: scale(0.95);
+  box-shadow: none;
+}
+
+.btn-increment:hover,
+.btn-decrement:hover,
+.btn-reset:hover {
+  background-color: #333;
+  border-color: #333;
+  color: white;
+}
+
+.calls-container {
+  background-color: gold;
+}
+
+.escalations-container {
+  background-color: gold;
+}
+
+.money-container {
+  background-color: black;
+}
+
+.counter-value {
+  height: 70px;
+  min-width: 70px;
+  border-radius: 10px;
+  background-color: #000000;
+  color: white;
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#esc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+}
+
+#escc {
+  font-size: 36px;
+  margin: 10px 0;
+}
+
+#money-value-button {
+  border: none;
+  background-color: gold;
+  color: black;
+  font-size: 40px;
+  padding: 8px 12px;
+  border-radius: 5px;
+}
+
+#money-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+#money-text {
+  font-size: 25px;
+  color: white;
+  margin-bottom: 20px;
+  text-align: center;
+  max-width: 100%;
+}
+
+#money-value-container {
+  border-radius: 5px;
+  background-color: #000000;
+  color: white;
+  padding: 8px 12px;
+  font-size: 18px;
+}
+
+#escalations-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+#escalations-text {
+  font-size: 25px;
+  color: white;
+  margin-bottom: 20px;
+  text-align: center;
+  max-width: 100%;
+}
+
+#escalations-value {
+  border-radius: 5px;
+  background-color: gold;
+  color: black;
+  padding: 8px 12px;
+  font-size: 40px;
+}
+
+#escalations-value::after {
+  content: "%";
+  color: black;
+  font-size: 40px;
+  margin-left: 4px;
+}
+
+#mon {
+  font-size: 30px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+}
+
+.options-table {
+  display: grid;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.options-table h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+table {
+  width: 100%;
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid black;
+  overflow: hidden;
+}
+
+table td {
+  padding: 8px;
+  border: 1px solid black;
+  height: 45px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+table tr td:first-child {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+table tr td:last-child {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+table td:first-child {
+  font-weight: bold;
+}
+
+.options-table table tr:first-child {
+  font-size: 25px;
+}
+
+.options-table input[type="radio"] {
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.options-table .container {
+  gap: 10px;
+}
+
+.buttons-container {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+}
+
+input[type="radio"] {
+  accent-color: black;
+}
+
+input[type="radio"]:focus {
+  border-color: blue;
+}
+
+input[type="radio"]:checked {
+  border-color: green;
+}
+
+.statistics {
+  display: grid;
+  grid-template: 1fr /1fr;
+  height: 85vh;
+  width: 85vh;
+  border-radius: 40px;
+  border: 10px solid black;
+  overflow: hidden;
+  background-color: gold;
+  margin: 10px;
+}
+
+.percentage-table.container {
+  display: grid;
+  align-items: start;
+}
+
+.number-table.container {
+  display: grid;
+  align-items: end;
+}
+
+.number-table .container,
+.percentage-table .container {
+  gap: 5px;
+}
+
+.statistics .number-table h1 {
+  border: none;
+  color: black;
+  font-size: 28px;
+  padding: 0px 4px;
+  border-radius: 5px;
+}
+
+.statistics .percentage-table h1 {
+  border: none;
+  color: black;
+  font-size: 28px;
+  padding: 0px 4px;
+  border-radius: 5px;
+}
+
+.statistics .number-table td,
+.statistics .percentage-table td {
+  height: 38px;
+}
+
+.statistics .number-table,
+.statistics .percentage-table {
+  height: 320px;
+}
+
+@media screen and (max-width: 768px) {
+  .main-container {
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .main {
+    height: 90vw;
+    width: 90vw;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .statistics {
+    height: 90vw;
+    width: 90vw;
+  }
+}
+
+.btn-increment[disabled] {
+  background-color: #ccc;
+  color: #666;
+  cursor: not-allowed;
+}
+
+input[type="radio"]:disabled:hover {
+  cursor: not-allowed;
+}

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Счетчик</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" />
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="main">
+        <!-- Контейнер для счётчика "Звонки" -->
+        <div class="container calls-container">
+          <div class="container">
+            <div class="counter" id="calls">
+              <button class="btn-increment">+</button>
+              <button class="btn-decrement">-</button>
+              <div class="counter-value">0</div>
+            </div>
+            <h1>Звонки</h1>
+            <button class="btn-reset" id="reset-calls">Сброс</button>
+          </div>
+        </div>
+
+        <!-- Контейнер для счётчика "Эскалации" -->
+        <div class="container escalations-container">
+          <div class="container">
+            <div class="counter" id="escalations">
+              <button class="btn-increment">+</button>
+              <button class="btn-decrement">-</button>
+              <div class="counter-value">0</div>
+            </div>
+            <h1>Эскалации</h1>
+            <button class="btn-reset" id="reset-escalations">Сброс</button>
+          </div>
+        </div>
+
+        <!-- Контейнер для вывода бабосиков "money" -->
+        <div class="container money-container">
+          <div id="mon">
+            <div id="money-container">
+              <p id="money-text">Количество БО</p>
+              <button id="money-value-button"></button>
+            </div>
+            <div id="escalations-container">
+              <p id="escalations-text">Процент эскалаций</p>
+              <div id="escalations-value">0.00</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container options-table">
+          <div class="container">
+            <table>
+              <tr>
+                <td>Запрос CSAT</td>
+                <td><b>Да</b></td>
+                <td><b>Нет</b></td>
+              </tr>
+              <tr>
+                <td>Положительный звонок</td>
+                <td>
+                  <input
+                    type="radio"
+                    class="radio-button"
+                    id="pol-yes"
+                    name="options"
+                    value="pol-yes"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="radio"
+                    class="radio-button"
+                    id="pol-no"
+                    name="options"
+                    value="pol-no"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>Нейтральный звонок</td>
+                <td>
+                  <input
+                    type="radio"
+                    class="radio-button"
+                    id="neu-yes"
+                    name="options"
+                    value="neu-yes"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="radio"
+                    class="radio-button"
+                    id="neu-no"
+                    name="options"
+                    value="neu-no"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>Негативный звонок</td>
+                <td>
+                  <input
+                    type="radio"
+                    class="radio-button"
+                    id="neg-yes"
+                    name="options"
+                    value="neg-yes"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="radio"
+                    class="radio-button"
+                    id="neg-no"
+                    name="options"
+                    value="neg-no"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>Сброс, курьер и т.д.</td>
+                <td colspan="2" id="drop">
+                  <input type="radio" class="radio-button" id="drop" name="options" value="drop" />
+                </td>
+              </tr>
+            </table>
+            <div class="buttons-container">
+              <button class="btn-reset" id="enter-info">Ввести</button>
+              <button class="btn-reset" id="reset-info">Отмена</button>
+              <button class="btn-reset" id="reset-options">Сброс</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+      <div class="statistics">
+        <div class="container number-table">
+          <div class="container">
+            <h1>Общее количество</h1>
+            <table>
+              <tr>
+                <td></td>
+                <td><b>С запросом CSAT</b></td>
+                <td><b>Без запроса CSAT</b></td>
+              </tr>
+              <tr>
+                <td>Положительные звонки</td>
+                <td id="positive-calls-with">0</td>
+                <td id="positive-calls-without">0</td>
+              </tr>
+              <tr>
+                <td>Нейтральные звонки</td>
+                <td id="neutral-calls-with">0</td>
+                <td id="neutral-calls-without">0</td>
+              </tr>
+              <tr>
+                <td>Негативные звонки</td>
+                <td id="negative-calls-with">0</td>
+                <td id="negative-calls-without">0</td>
+              </tr>
+              <tr>
+                <td>Сброс, курьер и т.д.</td>
+                <td colspan="2" id="drop-calls">0</td>
+              </tr>
+              <tr>
+                <td>Всего звонков</td>
+                <td id="total-calls-with">0</td>
+                <td id="total-calls-without">0</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+
+        <div class="container percentage-table">
+          <div class="container">
+            <h1>Процентное соотношение</h1>
+            <table>
+              <tr>
+                <td></td>
+                <td><b>С запросом CSAT</b></td>
+                <td><b>Без запроса CSAT</b></td>
+              </tr>
+              <tr>
+                <td>Положительные звонки</td>
+                <td id="positive-percentage-with">0.00%</td>
+                <td id="positive-percentage-without">0.00%</td>
+              </tr>
+              <tr>
+                <td>Нейтральные звонки</td>
+                <td id="neutral-percentage-with">0.00%</td>
+                <td id="neutral-percentage-without">0.00%</td>
+              </tr>
+              <tr>
+                <td>Негативные звонки</td>
+                <td id="negative-percentage-with">0.00%</td>
+                <td id="negative-percentage-without">0.00%</td>
+              </tr>
+              <tr>
+                <td>Сброс, курьер и т.д.</td>
+                <td colspan="2" id="drop-percentage-calls">0.00%</td>
+              </tr>
+              <tr>
+                <td>Всего звонков</td>
+                <td id="total-percentage-calls-with">0.00%</td>
+                <td id="total-percentage-calls-without">0.00%</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="long-calls">
+      <div class="long-text">
+        -
+      </div>
+      <div class="long-calls-count">
+        565
+      </div>
+    </div>
+  </body>
+  <script src="counter.js"></script>
+</html>
